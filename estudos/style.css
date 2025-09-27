@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background: #f2f2f2;
+}
+
+/* Header */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 100px;              /* header maior */
+  background: #122e76;        /* azul */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ícones nas pontas */
+  padding: 0 12px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  position: relative;         /* referência pro logo central */
+}
+
+/* Botões do header */
+.btn-icon {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* Logo central absoluta */
+.brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  max-height: 80%;  /* ajusta ao header */
+  width: auto;
+  display: block;
+}
+
+/* Ícone hamburguer */
+.hamburger-box {
+  position: relative;
+  width: 22px;
+  height: 14px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+.hamburger-inner { top: 6px; }
+.hamburger-inner::before { top: -6px; }
+.hamburger-inner::after  { top: 6px; }
+
+/* estado aberto */
+.menu-open .hamburger-inner { transform: rotate(45deg); }
+.menu-open .hamburger-inner::before { top: 0; transform: rotate(90deg); }
+.menu-open .hamburger-inner::after  { top: 0; opacity: 0; }
+
+/* Menu lateral */
+.side-menu {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+
+  width: 78vw;
+  max-width: 320px;
+  background: #f59e0b;
+  color: #fff;
+
+  transform: translateX(-100%);
+  transition: transform .25s linear;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 16px 16px 0;
+}
+
+.menu-open .side-menu { transform: translateX(0); }
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.menu-title { font-weight: bold; }
+
+.menu-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 10px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.menu-list a {
+  color: #fff;
+  text-decoration: none;
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.menu-list a:hover{
+  color: #1e3a8a;
+  transition: 0.7s;
+}
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  display: none;
+  z-index: 15;
+}
+.menu-open .backdrop { display: block; }
+
+/* -------- Desktop -------- */
+@media (min-width: 500px) {
+  .app-header { height: 120px; }
+  .brand-logo { max-height: 60%; }
+  .descricao-pagina{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  
+}
+.descricao-pagina p{
+  margin-top: 95%;
+  margin-left: 200%;
+}
+}
+.app-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 100px;              /* header maior */
+  background: #122e76;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  position: relative;
+}
+
+.brand{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.brand-logo{
+  max-height: 90%;            
+  width: auto;
+  display: block;
+}
+@media (max-width: 500px){
+  .brand-logo{
+  max-height: 60%;            
+  width: auto;
+  display: block;
+
+
+}
+.descricao-pagina p{
+  margin-top: 95%;
+  margin-left: 100%;
+}
+header {
+  max-width: 100%;
+}
+}
