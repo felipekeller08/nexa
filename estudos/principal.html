@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nexa • Header Mobile</title>
-  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/principal.css">
 </head>
 <body>
   <!-- HEADER -->
@@ -48,18 +48,47 @@
 
 
   <!------------------------------------- CONTEUDO DA PÁGINA---------------------------------->
-  <div class="total">
-  <main class="hero">
-    <h1>
-      <strong>GRANDES RESULTADOS</strong><br>
-      NASCEM DE PEQUENAS AÇÕES.
-    </h1>
-    <button class="cta-button" onclick="window.location.href='principal.html';">
-  COMECE JÁ
-</button>
+<main>
+        <main>
+            <!-- Linha com cards de entrada -->
+            <div class="card-row">
+                <div class="card">
+                    <h1>ESTUDOS</h1>
+                    <input type="text" placeholder="O que vai estudar hoje?" id="estudo"><br><br>
+                    <p>Quando irá começar:</p>
+                    <input type="date" id="comeco-estudo"><br><br>
+                    <p>Quando irá terminar:</p>
+                    <input type="date" id="final-estudo">
+                    <button class="btn-salvar" id="btn-salvar-estudo">Salvar</button>
+                </div>
 
-  </main>
-  </div>
+                <div class="card">
+                    <h1>METAS</h1>
+                    <input type="text" placeholder="Qual sua meta?" id="meta"><br><br>
+                    <p>Quando irá começar:</p>
+                    <input type="date" id="comeco-meta"><br><br>
+                    <p>Quando irá terminar:</p>
+                    <input type="date" id="final-meta"><br><br>
+                    <button class="btn-salvar" id="btn-salvar-meta">Salvar</button>
+                </div>
+            </div>
+
+            <!-- Linha com cards gerados -->
+            <div class="card-row">
+                <div class="card">
+                    <h1>SEUS ESTUDOS</h1>
+                    <div id="estudos-area"></div>
+                </div>
+
+                <div class="card">
+                    <h1>SUAS METAS</h1>
+                    <div id="metas-area"></div>
+                </div>
+            </div>
+        </main>
+
+
+    </main>
   <!------------------------------------- CONTEUDO DA PÁGINA---------------------------------->
 
 
@@ -69,5 +98,10 @@
   <!-----SCRIPT DO HEADER-->
   <script src="scripts/script.js"></script>
   <!-----SCRIPT DO HEADER-->
+
+  <!-----SCRIPTS DA PÁGINA-->
+    <script src="scripts/estudos.js"></script>
+    <script src="scripts/metas.js"></script>
+  <!----SCRIPTS DA PÁGINA-->
 </body>
 </html>
